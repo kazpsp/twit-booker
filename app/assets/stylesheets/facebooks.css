@@ -70,12 +70,23 @@
     margin-right: auto ;
 }
 
+.twit a {
+	text-decoration: none;
+	color: #2AADF1;
+	font-weight: bold;
+}
+
+.twit a:hover{
+	color: #000000;
+}
+
 .twit ul li {
 	padding: 5px 5px 5px 20px;
 }
 .twit ul li:first-child {
 	float: left;
 }
+
 .twit ul{
 	min-height:85px;
 	background-color:#FFFFFF;

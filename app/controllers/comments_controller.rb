@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
   
   def create
     @comment = Comment.new(params[:comment])
+    @comment.facebook_id = session[:user]
     if @comment.save
       redirect_to facebooks_path, :notice => "Posted"
     else
