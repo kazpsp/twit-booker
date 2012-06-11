@@ -1,0 +1,46 @@
+<div id="userinfo">
+	<div id="foto">
+		 <fb:profile-pic uid="<%= @user.try(:identifier) %>" size="normal" facebook-logo="true"></fb:profile-pic>
+	</div>
+	<ul>
+		 <li><%= @user.name %></li>
+		 <li>Birthday: <%= @user.birthday %></li>	
+		 <li>Email: <%= @user.email %></li>
+		 <li>IDFB: <%= @user.identifier %></li>		 
+		 <li>IDFB: <%= @fb %></li>		
+		 <li>ID: <%= session[:user] %></li>		
+	</ul>
+</div>
+
+<div id="twits">
+	<ul>
+		<li class="twit twit2">
+			<ul>
+				 <%= form_for @comment do |c| %>
+				 	<li><%= c.text_area :comment  %></li>
+				 	
+				 	<li><%= c.submit "Post"  %>	</li>						 
+				 <% end %>
+			</ul>
+		</li>
+		
+		
+		
+		<% @comments.each do |com| %>
+			<li class="twit">
+				<ul>
+					
+					<li><fb:profile-pic uid="<%= @user.try(:identifier) %>" size="small" facebook-logo="true" linked="false"></fb:profile-pic></li>
+					<li><%= @user.name %></li>	
+					<li><%= com.comment %></li>
+					<div style="clear: both;"></div>
+					
+					
+				</ul>
+			</li>			
+		<% end %>
+		 
+		
+		
+	</ul>
+</div>
