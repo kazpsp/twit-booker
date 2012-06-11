@@ -1,7 +1,7 @@
 
 class FacebooksController < ApplicationController
   def index
-    auth = FbGraph::Auth.new("425361747497382", "7b7523dd9b476aacb796d549154f4d96")
+    auth = FbGraph::Auth.new("247969818637768", "178adf2834c1fc3b0aaa5e6e65bf7432")
     
     auth.from_cookie(cookies) # Put whole cookie object (a Hash) here.    
     user = FbGraph::User.me(auth.access_token)
@@ -23,7 +23,7 @@ class FacebooksController < ApplicationController
    end
    
    def new
-    auth = FbGraph::Auth.new("425361747497382", "7b7523dd9b476aacb796d549154f4d96")
+    auth = FbGraph::Auth.new("247969818637768", "178adf2834c1fc3b0aaa5e6e65bf7432")
     auth.from_cookie(cookies) # Put whole cookie object (a Hash) here.    
     user = FbGraph::User.me(auth.access_token)
     user = user.fetch
